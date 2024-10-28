@@ -127,7 +127,7 @@ def mse(predictions):
 df = pd.read_csv('../Data/rating.csv')
 
 # keep the top 10000 most rated movies
-top_movies = df['movieId'].value_counts().head(500).index
+top_movies = df['movieId'].value_counts().head(10).index
 df = df[df['movieId'].isin(top_movies)]
 
 # Implement and test the accuracy of the collaborative filtering algorithm. Use a train and test set.
@@ -139,7 +139,7 @@ starttime = time.time()
 sparse_matrix, user_to_index, index_to_user, movie_to_index, index_to_movie = create_sparse_matrix(train, test)
 print("Time to create sparse matrix: ", time.time() - starttime)
 
-average_movie_ratings = np.mean(sparse_matrix[sparse_matrix > 0], axis=1).flatten()
+average_movie_ratings = np.array([np.mean(row) for row in sparse_matrix])
 
 starttime = time.time()
 item_similarity_matrix = compute_item_similarity_matrix(sparse_matrix)
