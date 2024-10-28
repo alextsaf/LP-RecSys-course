@@ -58,8 +58,6 @@ def compute_user_similarity_matrix(sparse_matrix):
     
     return user_similarity_matrix
 
-
-
 def score(userID, itemID, user_to_index, movie_to_index, sparse_matrix):
     """
     Compute the score for a user and an item
