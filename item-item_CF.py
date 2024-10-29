@@ -127,7 +127,7 @@ def mse(predictions):
 df = pd.read_csv('../Data/rating.csv')
 
 # keep the top 10000 most rated movies
-top_movies = df['movieId'].value_counts().head(10).index
+top_movies = df['movieId'].value_counts().head(1000).index
 df = df[df['movieId'].isin(top_movies)]
 
 # Implement and test the accuracy of the collaborative filtering algorithm. Use a train and test set.
