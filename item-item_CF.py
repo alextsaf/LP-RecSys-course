@@ -105,9 +105,7 @@ def predict(df, user_to_index, movie_to_index, sparse_matrix):
     :param user_similarity: user similarity
     :return: data frame with predictions
     """
-    #tqdm 
     
-    # df['prediction'] = df.apply(lambda x: score(x['userId'], x['movieId'], user_to_index, movie_to_index, sparse_matrix), axis=1)
     df['prediction'] = [score(x['userId'], x['movieId'], user_to_index, movie_to_index, sparse_matrix) 
                         for index, x in tqdm(df.iterrows(), total=len(df))]
 
