@@ -8,7 +8,7 @@ from tqdm import tqdm
 K = 2
 steps = 1000
 sample = 1000
-debug = True
+debug = False
 
 def print_debug(*args, **kwargs):
     if debug:
