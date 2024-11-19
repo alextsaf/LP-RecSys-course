@@ -5,9 +5,9 @@ from sklearn.model_selection import train_test_split
 from scipy.sparse import csr_matrix
 from tqdm import tqdm
 
-K = 2
+K = 15
 steps = 1000
-sample = 1000
+sample = 0
 debug = False
 
 def print_debug(*args, **kwargs):
